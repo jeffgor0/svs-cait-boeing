@@ -40,7 +40,7 @@ ${MTU}  9216
         output contains "mtu 9216"
         run "show interface ${INTERFACE}"
         output contains "MTU ${MTU} bytes"
-        Set Test Message  MTU for ${INTERFACE} is ${MTU}
+        Set Test Message  MTU for ${INTERFACE} is ${MTU}\n  append=True
     END
 
 
