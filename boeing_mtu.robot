@@ -18,7 +18,7 @@ ${MTU}  9216
 
 1. Connect to Device
     [Documentation]  Load the testbed file and connect to the DUT.
-    load testbed
+    load testbed "testbed.yaml"
     connect to device "${DUT}" via "ssh"
     Log  Connect to device - "${DUT}" - SUCCESSFUL.
     
