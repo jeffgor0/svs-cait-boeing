@@ -41,7 +41,7 @@ ${VPC_KEEPALIVE_DEST_IP}  172.31.33.68
 4. Validate VPC Keep-Alive status.
    [Documentation]  Validate VPC Keep-Alive status.
     run "show vpc peer-keepalive"
-    ${status}=  Run Keyword And Return Status  should be true  values "vPC peer-keepalive status" and "peer is alive" exist on same line
+    ${status}=  Run Keyword And Return Status  should be true  values "vPC keep-alive status" and "peer is alive" exist on same line
     Run Keyword If  '${status}' == 'False'  FAIL  The VPC peer keep-alive is NOT alive - UNSUCCESSFUL
 	Set Test Message  The VPC peer keep-alive is alive - SUCCESSFUL	
 
