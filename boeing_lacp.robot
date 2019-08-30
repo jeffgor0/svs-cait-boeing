@@ -31,7 +31,7 @@ ${BUNDLE}  Po1
 4. Validate interfaces are configured for LACP port channel
    [Documentation]  Validate interface is a part of the port-channel
     FOR  ${INTERFACE}  IN  @{BUNDLE_INTF} 
-        run "show interface ${INTERFACE}"
+        run "show run interface ${INTERFACE}"
         ${status}=  Run Keyword And Return Status  output contains "mode active"
         Run Keyword If  '${status}' == 'False'  FAIL  ${INTERFACE} is not configured for LACP port channel
         Set Test Message  ${INTERFACE} is configured for LACP port channel\n  append=True
