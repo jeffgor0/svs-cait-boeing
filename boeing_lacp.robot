@@ -10,7 +10,7 @@ Documentation  Validate LACP Port channel is up and has expected members
 
 ${DUT}  West-Leaf-1
 ${BUNDLE}  Po1
-@{BUNDLE_INTF}  eth1/2  eth1/3
+@{BUNDLE_INTF}  Eth1/2  Eth1/3
 
 *** Test Cases ***
 1. Connect to Device
@@ -41,7 +41,7 @@ ${BUNDLE}  Po1
     [Documentation]  Validate LACP port channel is up
     run "show port-channel summary"
     FOR  ${INTERFACE}  IN  @{BUNDLE_INTF}
-        ${status}=  Run Keyword And Return Status  values "${BUNDLE}" and ${INTERFACE} exist on same line
+        ${status}=  Run Keyword And Return Status  values "${BUNDLE}" and "${INTERFACE}" exist on same line
         Run Keyword If  '${status}' == 'False'  FAIL  ${INTERFACE} is not up in ${BUNDLE}
         Set Test Message  ${INTERFACE} is up in ${BUNDLE}\n  append=True
     END
