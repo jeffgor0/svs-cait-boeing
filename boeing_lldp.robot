@@ -37,7 +37,7 @@ ${DUT}  West-Leaf-1
     [Documentation]  Capture LLDP neighbors and compare them against the expected list of neighbors
     run "show lldp neighbors"
     FOR  ${NEIGHBOR}  IN  @{NEIGHBOR_LIST}
-        ${status}=  Run Keyword And Return Status  output contains ${NEIGHBOR}
+        ${status}=  Run Keyword And Return Status  output contains "${NEIGHBOR}"
         Run Keyword If  '${status}' == 'False'  FAIL  LLDP ${NEIGHBOR} is not seen
         Set Test Message  ${NEIGHBOR} is seen by the DUT\n  append=True
     END
