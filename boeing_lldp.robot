@@ -18,7 +18,7 @@ ${DUT}  West-Leaf-1
 
 1. Connect to Device
     load testbed
-    connect to device "${3850_DUT}"
+    connect to device "${DUT}"
     run "terminal length 0"
 2. Validate LLDP Feature is enabled
     [Documentation]  Use show feature command to validate LLDP
