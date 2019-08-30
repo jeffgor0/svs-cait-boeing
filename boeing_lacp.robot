@@ -26,7 +26,7 @@ ${BUNDLE}  Po1
 	
 3. Obtain the running Configuration of the Interface
     [Documentation]  Obtain the running Configuration of the Interface.
-	run "Show run interface %{INTERFACE}"
+	run "Show run interface ${BUNDLE}"
 
 4. Validate interfaces are configured for LACP port channel
    [Documentation]  Validate interface is a part of the port-channel
