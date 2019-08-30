@@ -15,7 +15,7 @@ ${BUNDLE}  Po1
 *** Test Cases ***
 1. Connect to Device
 	[Documentation]  Load the testbed file and connect to the DUT.
-    load testbed from environment variables
+    load testbed
     connect to device "${DUT}"
     run "term len 0"
 	Set Test Message  Connect to device - "${DUT}" - SUCCESSFUL.
