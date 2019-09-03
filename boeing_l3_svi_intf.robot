@@ -1,7 +1,7 @@
 *** Settings ***
 Library     CXTA
 Resource    cxta.robot
-Documentation  Validate L3 Loopback interface state and configuration
+Documentation  Validate 
 
 *** Keywords ***
 # Define user defined keywords if needed
@@ -9,8 +9,8 @@ Documentation  Validate L3 Loopback interface state and configuration
 *** Variables ***
 
 ${DUT}  West-Leaf-1
-${INTERFACE}  mgmt0
-${IP_ADDR}  172.31.33.67/24
+${INTERFACE}  Vlan100
+${IP_ADDR}  100.100.100.1/24
 
 *** Test Cases ***
 
@@ -32,8 +32,6 @@ ${IP_ADDR}  172.31.33.67/24
 3. Validate the Layer-3 interface state
     [Documentation]  Validate the interface state is  "up/up"
     run "show interface ${INTERFACE}"
-    ${status}=  Run Keyword And Return Status  output contains "admin state is up"
-    å
     ${status}=  Run Keyword And Return Status  output contains "${INTERFACE} is up"
     Run Keyword If  '${status}' == 'False'  FAIL  ${INTERFACE} is not up
     Set Test Message  ${INTERFACE} is up

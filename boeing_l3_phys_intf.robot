@@ -1,7 +1,7 @@
 *** Settings ***
 Library     CXTA
 Resource    cxta.robot
-Documentation  Validate L3 Loopback interface state and configuration
+Documentation  *** NEED TO ADD L3 PHY INT TO DUT FOR SCRIPT TO WORK ***
 
 *** Keywords ***
 # Define user defined keywords if needed
@@ -9,7 +9,7 @@ Documentation  Validate L3 Loopback interface state and configuration
 *** Variables ***
 
 ${DUT}  West-Leaf-1
-${INTERFACE}  mgmt0
+${INTERFACE}  Eth1/50
 ${IP_ADDR}  172.31.33.67/24
 
 *** Test Cases ***
@@ -43,4 +43,4 @@ ${IP_ADDR}  172.31.33.67/24
     run "show run interface ${INTERFACE}"
     ${status}=  Run Keyword And Return Status  output contains "${IP_ADDR}"
     Run Keyword If  '${status}' == 'False'  FAIL  ${INTERFACE} is not configured with correct IP/mask
-    Set Test Message  ${INTERFACE} is configured with  ${IP_ADDR}
+    Set Test Message  ${INTERFACE} is configured with  ${IP_ADDR}ß
