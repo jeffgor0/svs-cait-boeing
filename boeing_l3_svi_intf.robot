@@ -1,7 +1,7 @@
 *** Settings ***
 Library     CXTA
 Resource    cxta.robot
-Documentation  Validate 
+Documentation  Validate SVI interface details
 
 *** Keywords ***
 # Define user defined keywords if needed
