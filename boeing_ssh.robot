@@ -17,6 +17,7 @@ ${DUT}  West-Leaf-1
     [Documentation]  Load the testbed file and connect to the DUT.
     load testbed
     connect to device "${DUT}" via "console"
+    run "terminal length 0"
     Set Test Message  Connect to device - ${DUT} - SUCCESSFUL
 
 2. Capture Running Configuration
